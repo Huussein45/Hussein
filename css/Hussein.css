@@ -118,13 +118,13 @@ h2 {
   animation: right-move 0.5s linear forwards;
 }
 
-.main-hidden .all-boxes {
+.article .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.main-hidden .all-boxes .box {
+.article .container .box {
   background-color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -132,40 +132,40 @@ h2 {
   overflow: hidden;
 }
 
-.main-hidden .all-boxes .box:hover {
+.article .container .box:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.main-hidden .all-boxes .box img {
+.article .container .box img {
   max-width: 100%;
   width: 100%;
 }
 
-.main-hidden .all-boxes .box .text {
+.article .container .box .text {
   padding: 12px;
 }
 
-.main-hidden .all-boxes .box .text h3 {
+.article .container .box .text h3 {
   text-transform: capitalize;
 }
-.main-hidden .all-boxes .box .text p {
+.article .container .box .text p {
   margin: 10px 0 0;
 }
 
-.main-hidden .all-boxes .box .icon {
+.article .container .box .icon {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   border-top: solid 1px #ccc;
   align-items: center;
 }
-.main-hidden .all-boxes .box .icon a,
-.main-hidden .all-boxes .box .icon i {
+.article .container .box .icon a,
+.article .container .box .icon i {
   color: var(--main-color);
   font-weight: bold;
 }
-.main-hidden .all-boxes .box:hover .icon i {
+.article .container .box:hover .icon i {
   animation: icon-ani 0.7s linear infinite;
 }
 /* End components  */
@@ -918,16 +918,23 @@ h2 {
 }
 
 .skills .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  justify-content: space-between;
-  gap: 30px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .skills .container .img {
+    display: none;
+  }
 }
 
 .skills .container .img img {
   max-width: 100%;
 }
 
+.skills .container .big-box {
+  flex: 1;
+}
 .skills .container .big-box .box {
   margin-bottom: 50px;
   padding: 10px 14px 0 10px;
@@ -1533,12 +1540,12 @@ h2 {
 
 .discount .form h2 {
   color: var(--main-color-alt);
-  margin-bottom: 20px;
+  margin-bottom: 33px;
 }
 .discount .form .input {
   display: block;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 16px;
   width: 100%;
   caret-color: #2106f3;
   border: none;
@@ -1609,12 +1616,12 @@ h2 {
 .footer .links li {
   margin: 24px;
   padding-bottom: 10px;
-  
+
   transition: var(--transition);
 }
 
-.footer .links li:not(:last-child){
-border-bottom: 1px solid #f6f6f64e;
+.footer .links li:not(:last-child) {
+  border-bottom: 1px solid #f6f6f64e;
 }
 
 .footer .links li:hover {
@@ -1661,6 +1668,7 @@ border-bottom: 1px solid #f6f6f64e;
   padding-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.491);
   margin-bottom: -39px;
-  margin-top: 65px;
+  margin-top: 55px;
+  transform: translateY(50%);
 }
 /* end footer  */
